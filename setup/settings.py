@@ -67,23 +67,23 @@ WSGI_APPLICATION = 'setup.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
-
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': str(os.getenv('MYSQL_DATABASE')),
-        'USER': str(os.getenv('MYSQL_USER')),
-        'PASSWORD': str(os.getenv('MYSQL_PASSWORD')),
-        'HOST': str(os.getenv('DB_HOST', 'db')),  # Use 'db' as default from .env
-        'PORT': str(os.getenv('DB_PORT', '3306')),  # Use '3306' as default from .env
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': str(os.getenv('MYSQL_DATABASE')),
+#         'USER': str(os.getenv('MYSQL_USER')),
+#         'PASSWORD': str(os.getenv('MYSQL_PASSWORD')),
+#         'HOST': str(os.getenv('DB_HOST', 'db')),  # Use 'db' as default from .env
+#         'PORT': str(os.getenv('DB_PORT', '3306')),  # Use '3306' as default from .env
+#     }
+# }
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
