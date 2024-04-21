@@ -35,21 +35,15 @@ services:
     #   - db:
     #       condition: service_healthy
 
-  mysql-workbench:
-      image: lscr.io/linuxserver/mysql-workbench:latest
-      container_name: mysql-workbench
-      environment:
-        - PUID=1000
-        - PGID=1000
-        - TZ=Etc/UTC
-      volumes:
-        - /path/to/config:/config
-      ports:
-        - 3000:3000
-        - 3001:3001
-      cap_add:
-        - IPC_LOCK
-      restart: unless-stopped
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    environment:
+      - PMA_ARBITRARY=1
+    restart: always
+    ports:
+      - 8082:80
+    volumes:
+      - /sessions
 
 volumes:
   data:
