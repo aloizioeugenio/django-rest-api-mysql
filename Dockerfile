@@ -27,4 +27,7 @@ RUN source venv/bin/activate
 # ENTRYPOINT ["/app/django.sh"]
 
 # Executing Django
-CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
+# CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
+
+# Running the command slepp to keep the container running
+CMD ["sleep", "3600"]
